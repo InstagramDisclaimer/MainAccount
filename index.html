@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="robots" content="index,follow" />
+  <title>Social Media Disclaimer</title>
+  <meta name="description" content="Public disclaimer regarding social media activity, engagement, reposts, and political content." />
+  <style>
+    :root{
+      --bg:#0b0f14;
+      --panel:#0f1621;
+      --text:#e8eef6;
+      --muted:#a8b3c2;
+      --line:#223041;
+      --accent:#7aa7ff;
+      --warn:#ffd27a;
+      --ok:#8dffb5;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 18px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background: radial-gradient(1200px 700px at 15% 0%, rgba(122,167,255,.18), transparent 60%),
+                  radial-gradient(900px 600px at 90% 10%, rgba(141,255,181,.10), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+    a{color:var(--accent); text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 40px 18px 60px;
+    }
+    header{
+      background: linear-gradient(180deg, rgba(15,22,33,.92), rgba(15,22,33,.75));
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 26px 22px;
+    }
+    h1{
+      margin:0 0 10px;
+      font-size: clamp(26px, 3.2vw, 40px);
+      letter-spacing: .2px;
+    }
+    .sub{
+      margin:0;
+      color:var(--muted);
+      font-size: 15px;
+    }
+    .badgeRow{
+      margin-top:14px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 10px;
+      border-radius: 999px;
+      border:1px solid var(--line);
+      background: rgba(11,15,20,.55);
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .dot{
+      width:8px;height:8px;border-radius:50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 3px rgba(122,167,255,.14);
+    }
+    .dot.ok{background: var(--ok); box-shadow: 0 0 0 3px rgba(141,255,181,.10);}
+    .dot.warn{background: var(--warn); box-shadow: 0 0 0 3px rgba(255,210,122,.10);}
+    .grid{
+      margin-top: 18px;
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+    @media (min-width: 900px){
+      .grid{
+        grid-template-columns: 320px 1fr;
+        align-items:start;
+      }
+      .sticky{
+        position: sticky;
+        top: 18px;
+      }
+    }
+    nav, main{
+      background: rgba(15,22,33,.78);
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    nav{
+      padding: 18px 16px;
+    }
+    .navTitle{
+      margin: 0 0 10px;
+      font-size: 14px;
+      color: var(--muted);
+      letter-spacing:.2px;
+      text-transform: uppercase;
+    }
+    .navList{
+      list-style:none;
+      padding:0;margin:0;
+      display:grid;
+      gap:8px;
+    }
+    .navList a{
+      display:block;
+      padding:10px 12px;
+      border-radius: 12px;
+      border:1px solid transparent;
+      background: rgba(11,15,20,.45);
+      color: var(--text);
+    }
+    .navList a:hover{
+      border-color: rgba(122,167,255,.35);
+      background: rgba(122,167,255,.10);
+      text-decoration:none;
+    }
+    main{padding: 22px}
+    section{
+      padding: 10px 0 18px;
+      border-bottom: 1px solid rgba(34,48,65,.55);
+    }
+    section:last-child{border-bottom:none}
+    h2{
+      margin: 0 0 10px;
+      font-size: 20px;
+    }
+    p{margin: 10px 0; color: var(--text)}
+    .muted{color: var(--muted)}
+    .callout{
+      margin: 14px 0;
+      padding: 14px 14px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,210,122,.35);
+      background: rgba(255,210,122,.08);
+      color: var(--text);
+    }
+    .callout strong{color: var(--warn)}
+    .fineprint{
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .list{
+      margin: 10px 0 0;
+      padding-left: 18px;
+      color: var(--text);
+    }
+    .list li{margin: 6px 0}
+    .footer{
+      margin-top: 18px;
+      text-align:center;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .topbar{
+      margin-top: 14px;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+    button{
+      cursor:pointer;
+      border:1px solid var(--line);
+      background: rgba(11,15,20,.55);
+      color: var(--text);
+      padding: 10px 12px;
+      border-radius: 12px;
+      font-size: 14px;
+    }
+    button:hover{border-color: rgba(122,167,255,.35); background: rgba(122,167,255,.10)}
+    .small{font-size:12px;color:var(--muted)}
+    .mono{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>Social Media Disclaimer</h1>
+      <p class="sub">
+        This page explains how my online activity should be interpreted. It is intended to reduce misinterpretation of likes, reposts, views, and political content.
+      </p>
+
+      <div class="badgeRow" aria-label="Summary badges">
+        <div class="badge"><span class="dot ok"></span><span><strong>Private individual</strong> (personal capacity)</span></div>
+        <div class="badge"><span class="dot"></span><span><strong>Canadian citizen</strong> since birth (only passport)</span></div>
+        <div class="badge"><span class="dot warn"></span><span><strong>Political content:</strong> non-endorsement</span></div>
+      </div>
+
+      <div class="topbar">
+        <button type="button" id="copyLinkBtn" title="Copy this page link">Copy page link</button>
+        <button type="button" id="printBtn" title="Print / Save as PDF">Print / Save PDF</button>
+        <span class="small">Last updated: <span class="mono" id="lastUpdated"></span></span>
+      </div>
+    </header>
+
+    <div class="grid">
+      <nav class="sticky" aria-label="Table of contents">
+        <p class="navTitle">Contents</p>
+        <ul class="navList">
+          <li><a href="#status">1) Status & identity</a></li>
+          <li><a href="#personal">2) Personal capacity / not representation</a></li>
+          <li><a href="#nonendorse">3) Non-endorsement rule (all engagement)</a></li>
+          <li><a href="#political">4) Political content: explicit non-endorsement</a></li>
+          <li><a href="#thirdparty">5) Third-party content, reposts, links</a></li>
+          <li><a href="#accuracy">6) Accuracy, rumors, verification</a></li>
+          <li><a href="#conduct">7) No intent to insult, defame, harass</a></li>
+          <li><a href="#affiliation">8) No affiliation / sponsorship</a></li>
+          <li><a href="#legacy">9) Legacy activity & evolving views</a></li>
+          <li><a href="#requests">10) Removal / rights holder requests</a></li>
+          <li><a href="#jurisdiction">11) Interpretation & legal note</a></li>
+        </ul>
+      </nav>
+
+      <main>
+        <section id="status">
+          <h2>1) Status & identity</h2>
+          <p>
+            I was <strong>born a Canadian citizen</strong> and have held <strong>only Canadian citizenship since birth</strong>.
+            I <strong>hold no other passports</strong> and have never held any other nationality.
+          </p>
+          <p>
+            I am a <strong>private citizen of Canada</strong>. My <strong>place of residence and employment</strong> is the
+            <strong>United Arab Emirates (UAE)</strong>.
+          </p>
+        </section>
+
+        <section id="personal">
+          <h2>2) Personal capacity / not representation</h2>
+          <p>
+            All content and activity on any of my social accounts is shared strictly in a <strong>personal capacity</strong>.
+            It is <strong>not</strong> made on behalf of, or as a representative for, any employer, client, partner, brand, organization,
+            or any person connected to me.
+          </p>
+          <p class="muted">
+            Nothing on my pages should be interpreted as official statements, organizational positions, or institutional advocacy.
+          </p>
+        </section>
+
+        <section id="nonendorse">
+          <h2>3) Non-endorsement rule (all engagement)</h2>
+          <p>
+            Any <strong>likes</strong>, <strong>reactions</strong>, <strong>follows</strong>, <strong>comments</strong>, <strong>saves</strong>, <strong>bookmarks</strong>,
+            <strong>reposts</strong>, <strong>retweets</strong>, <strong>reshares</strong>, <strong>quote-shares</strong>, <strong>story shares</strong>,
+            <strong>tags</strong>, <strong>mentions</strong>, <strong>clicks</strong>, <strong>views</strong>, or engagement of any kind are
+            <strong>NOT endorsements</strong>.
+          </p>
+          <p>
+            Engagement does <strong>not</strong> indicate agreement, support, approval, sponsorship, alignment, or adoption of any message, theme, claim,
+            or viewpoint expressed by the original content, creator, or any linked material.
+          </p>
+          <ul class="list">
+            <li>Engagement may occur for many reasons: documentation, awareness, critique, discussion, media literacy, research, or algorithmic discovery.</li>
+            <li>Engagement may also be accidental (mis-taps) or incidental due to platform UI/algorithm behavior.</li>
+          </ul>
+        </section>
+
+        <section id="political">
+          <h2>4) Political content: explicit non-endorsement</h2>
+          <p>
+            Any engagement with <strong>political content</strong> (including parties, politicians, governments, policies, elections, geopolitics,
+            conflicts, activism, ideologies, or public affairs) is <strong>strictly non-endorsement</strong> and <strong>does not reflect my views</strong>.
+          </p>
+          <p>
+            It must not be interpreted as support for any political position, group, movement, ideology, public figure, or cause.
+            This also applies to content that could be interpreted as political commentary, satire, criticism, or advocacy.
+          </p>
+          <p>
+            Nothing on my pages represents the views or endorsements of <strong>anyone associated with me</strong>, including (without limitation)
+            family, friends, colleagues, clients, employers, contractors, business partners, or any related entities.
+          </p>
+        </section>
+
+        <section id="thirdparty">
+          <h2>5) Third-party content, reposts, links</h2>
+          <p>
+            Any reposted/shared content is <strong>third-party content</strong> attributable to its original source/author.
+            Sharing does not imply I have verified it, agree with it, or endorse it.
+          </p>
+          <p>
+            External links, screenshots, clips, embedded posts, and quoted material are provided for reference/context and remain the responsibility of the original publisher.
+          </p>
+        </section>
+
+        <section id="accuracy">
+          <h2>6) Accuracy, rumors, verification</h2>
+          <p>
+            I am <strong>not</strong> a news outlet. I do <strong>not</strong> claim that shared content is accurate, complete, current, or properly contextualized.
+          </p>
+          <p>
+            I do not intend to circulate false, misleading, or unverified information. Readers should rely on <strong>official sources</strong> for confirmation.
+          </p>
+          <p class="muted">
+            If you believe something posted or shared is incorrect, misleading, or lacking context, contact me and I will review it for correction or removal where appropriate.
+          </p>
+        </section>
+
+        <section id="conduct">
+          <h2>7) No intent to insult, defame, harass</h2>
+          <p>
+            No post, share, or engagement is intended to defame any person, harm anyone’s reputation, harass, threaten, intimidate, or provoke hostility.
+            I do not encourage pile-ons, targeting, doxxing, or harassment of any kind.
+          </p>
+          <p>
+            Nothing on my pages is intended to disrespect religions, cultures, communities, or protected symbols, and I do not promote hate, extremism, violence, or unlawful conduct.
+          </p>
+        </section>
+
+        <section id="affiliation">
+          <h2>8) No affiliation / sponsorship</h2>
+          <p>
+            Tags, mentions, and links do <strong>not</strong> imply partnership, endorsement, affiliation, sponsorship, or representation unless explicitly stated in a written agreement.
+          </p>
+          <p>
+            No content should be construed as advertising, solicitation, or promotion unless explicitly labeled as such.
+          </p>
+        </section>
+
+        <section id="legacy">
+          <h2>9) Legacy activity & evolving views</h2>
+          <p>
+            Social media platforms may display years of historical engagement. Any legacy interactions that may appear distasteful, outdated, humorous, satirical,
+            or misinterpretable should not be assumed to reflect my current beliefs, intentions, or values.
+          </p>
+          <p>
+            Where any past engagement exists, it should be interpreted under the same rule stated above: <strong>engagement is not endorsement</strong>.
+          </p>
+        </section>
+
+        <section id="requests">
+          <h2>10) Removal / rights holder requests</h2>
+          <p>
+            If you are a rights holder of content posted here, or if you believe content misrepresents you or could cause harm, contact me and I will review promptly
+            for removal, clarification, or credit as appropriate.
+          </p>
+        </section>
+
+        <section id="jurisdiction">
+          <h2>11) Interpretation & legal note</h2>
+          <div class="callout">
+            <strong>Note:</strong> This page is provided to clarify intent and reduce misinterpretation. It is not legal advice and is not a guarantee of outcomes.
+            Platform rules and applicable laws always apply.
+          </div>
+          <p class="fineprint">
+            This disclaimer does not waive any rights, does not create obligations, and does not override platform terms of service or any applicable laws and regulations.
+          </p>
+        </section>
+      </main>
+    </div>
+
+    <p class="footer">
+      © <span id="year"></span> — Disclaimer page
+    </p>
+  </div>
+
+  <script>
+    // Display dates
+    const now = new Date();
+    document.getElementById("year").textContent = now.getFullYear();
+    document.getElementById("lastUpdated").textContent = now.toISOString().slice(0,10);
+
+    // Copy page link
+    const copyBtn = document.getElementById("copyLinkBtn");
+    copyBtn.addEventListener("click", async () => {
+      try{
+        await navigator.clipboard.writeText(window.location.href);
+        copyBtn.textContent = "Copied ✅";
+        setTimeout(()=> copyBtn.textContent="Copy page link", 1500);
+      }catch(e){
+        alert("Copy failed. You can manually copy the URL from the address bar.");
+      }
+    });
+
+    // Print / save PDF
+    document.getElementById("printBtn").addEventListener("click", () => window.print());
+  </script>
+</body>
+</html>
