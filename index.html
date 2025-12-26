@@ -140,7 +140,7 @@
       font-size: 20px;
     }
     p{margin: 10px 0; color: var(--text)}
-    .muted{color: var(--muted)}
+    .muted{color:var(--muted)}
     .callout{
       margin: 14px 0;
       padding: 14px 14px;
@@ -149,38 +149,17 @@
       background: rgba(255,210,122,.08);
       color: var(--text);
     }
-    .callout strong{color: var(--warn)}
-    .fineprint{
-      font-size: 13px;
-      color: var(--muted);
-    }
-    .list{
-      margin: 10px 0 0;
-      padding-left: 18px;
-      color: var(--text);
-    }
+    .callout strong{color:var(--warn)}
+    .fineprint{font-size: 13px;color: var(--muted);}
+    .list{margin: 10px 0 0;padding-left: 18px;color: var(--text);}
     .list li{margin: 6px 0}
-    .footer{
-      margin-top: 18px;
-      text-align:center;
-      color: var(--muted);
-      font-size: 13px;
-    }
-    .topbar{
-      margin-top: 14px;
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      align-items:center;
-    }
+    .footer{margin-top: 18px;text-align:center;color: var(--muted);font-size: 13px;}
+    .topbar{margin-top: 14px;display:flex;gap:10px;flex-wrap:wrap;align-items:center;}
     button{
-      cursor:pointer;
-      border:1px solid var(--line);
+      cursor:pointer;border:1px solid var(--line);
       background: rgba(11,15,20,.55);
       color: var(--text);
-      padding: 10px 12px;
-      border-radius: 12px;
-      font-size: 14px;
+      padding: 10px 12px;border-radius: 12px;font-size: 14px;
     }
     button:hover{border-color: rgba(122,167,255,.35); background: rgba(122,167,255,.10)}
     .small{font-size:12px;color:var(--muted)}
@@ -339,7 +318,7 @@
         <section id="affiliation">
           <h2>9) No affiliation / sponsorship</h2>
           <p>
-            Tags, mentions, and links do <strong>not</strong> imply partnership, endorsement, affiliation, sponsorship, or representation unless explicitly stated in a written agreement.
+            Tags, mentions and links do <strong>not</strong> imply partnership, endorsement, affiliation, sponsorship, or representation unless explicitly stated in a written agreement.
           </p>
           <p>
             No content should be construed as advertising, solicitation, or promotion unless explicitly labeled as such.
@@ -361,7 +340,7 @@
           <h2>11) Removal / rights holder requests</h2>
           <p>
             If you are a rights holder of content posted here, or if you believe content misrepresents you or could cause harm, contact me and I will review promptly
-            for removal, clarification, or credit as appropriate.
+            for removal, clarification or credit as appropriate.
           </p>
         </section>
 
@@ -384,12 +363,10 @@
   </div>
 
   <script>
-    // Display dates
     const now = new Date();
     document.getElementById("year").textContent = now.getFullYear();
     document.getElementById("lastUpdated").textContent = now.toISOString().slice(0,10);
 
-    // Copy page link
     const copyBtn = document.getElementById("copyLinkBtn");
     copyBtn.addEventListener("click", async () => {
       try{
@@ -401,7 +378,6 @@
       }
     });
 
-    // Print / save PDF
     document.getElementById("printBtn").addEventListener("click", () => window.print());
   </script>
 </body>
